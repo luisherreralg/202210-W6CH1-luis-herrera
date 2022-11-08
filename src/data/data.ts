@@ -10,7 +10,7 @@ export const CharactersData = [
         name: 'Joffrey',
         family: 'Baratheon',
         age: 30,
-        img: 'https://www.google.es/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fking-joffrey-choking&psig=AOvVaw1Ro5aZlCNWdtfWG-BcgZ14&ust=1668017069971000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCIjiuPqVn_sCFQAAAAAdAAAAABAD',
+        img: 'https://www.meme-arsenal.com/memes/ad27e70867abe5268196005457dcaeec.jpg',
     },
     {
         name: 'Jaime',
