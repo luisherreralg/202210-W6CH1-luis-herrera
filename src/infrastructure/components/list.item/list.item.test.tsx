@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { loadActionCreator } from '../reducer/action.creator';
 import { ListItem } from './list.item';
 
 describe('Given list.item component', () => {
@@ -7,6 +8,8 @@ describe('Given list.item component', () => {
             render(
                 <ListItem
                     item={{ name: 'test', family: 'test', age: 0, img: 'test' }}
+                    dispatcher={loadActionCreator as unknown as jest.Mock}
+                    characters={[]}
                 ></ListItem>
             );
 
