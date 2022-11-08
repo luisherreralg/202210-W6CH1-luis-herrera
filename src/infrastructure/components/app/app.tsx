@@ -1,18 +1,41 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CharactersData } from '../../../data/data';
+import { rootState } from '../../store/store';
+import * as ac from '../reducer/action.creator';
+import { List } from '../list/list';
+import './app.css';
+import { getStore, setStore } from '../../services/storage';
 
-export function Form() {
+export function App() {
+    const characters = useSelector((state: rootState) => state.characters);
+    const dispatcher = useDispatch();
+
+    useEffect(() => {
+        dispatcher(
+            ac.loadActionCreator(
+                getStore().length === 0 ? CharactersData : getStore()
+            )
+        );
+    }, [dispatcher]);
+
+    // ------------------------------------------------------
     const initialForm = {
         name: '',
         family: '',
         age: 0,
-        image: '',
+        img: '',
     };
 
     const [form, setForm] = useState(initialForm);
 
     const handleClick = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        console.log(form);
+        if (form.img === '' || form.name === '') {
+            return;
+        }
+        dispatcher(ac.addActionCreator(form));
+        setStore(characters);
     };
 
     const handleForm = (ev: SyntheticEvent) => {
@@ -22,9 +45,10 @@ export function Form() {
             [target.name]: target.value,
         });
     };
-
     return (
-        <>
+        <div className="app">
+            202210-w6ch1-luis-herrera
+            <List data={characters}></List>
             <form>
                 <input
                     type="text"
@@ -52,16 +76,16 @@ export function Form() {
                 />
                 <input
                     type="text"
-                    name="image"
-                    id="image"
+                    name="img"
+                    id="img"
                     placeholder="image URL"
-                    value={form.image}
+                    value={form.img}
                     onInput={handleForm}
                 />
                 <button type="submit" onClick={handleClick}>
                     SEND
                 </button>
             </form>
-        </>
+        </div>
     );
 }
