@@ -53,7 +53,7 @@ export function App() {
     return (
         <div className="app">
             <h1>Game of MOCKS</h1>
-            <List data={characters} dispatcher={dispatcher}></List>
+            <List data={characters}></List>
             <form>
                 <input
                     type="text"
