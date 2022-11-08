@@ -1,5 +1,4 @@
 import { CharacterType } from '../../../data/data';
-import * as ac from '../reducer/action.creator';
 import { actionTypes } from './action.types';
 import { CharacterReducer } from './reducer';
 
