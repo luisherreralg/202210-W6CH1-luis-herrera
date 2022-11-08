@@ -9,8 +9,8 @@ export const CharactersData = [
     {
         name: 'Joffrey',
         family: 'Baratheon',
-        age: 30,
-        img: 'https://www.google.es/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fking-joffrey-choking&psig=AOvVaw1Ro5aZlCNWdtfWG-BcgZ14&ust=1668017069971000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCIjiuPqVn_sCFQAAAAAdAAAAABAD',
+        age: 15,
+        img: 'https://www.meme-arsenal.com/memes/ad27e70867abe5268196005457dcaeec.jpg',
     },
     {
         name: 'Jaime',
@@ -21,19 +21,19 @@ export const CharactersData = [
     {
         name: 'Daenerys',
         family: 'Targaryen',
-        age: 30,
+        age: 19,
         img: 'https://www.meme-arsenal.com/memes/fa6ef37211ea87bf3ed4dfb8bc013348.jpg',
     },
     {
         name: 'Tyrion',
         family: 'Lannister',
-        age: 30,
-        img: 'https://i.pinimg.com/originals/e8/c4/26/e8c4261fa8f51abfcba2659600c50a85.jpg',
+        age: 50,
+        img: 'https://winesplashing.files.wordpress.com/2020/08/tyrion.png',
     },
     {
         name: 'Bronn',
         family: '',
-        age: 30,
+        age: 24,
         img: 'https://preview.redd.it/i2abvqnizki31.png?auto=webp&s=0d22d80809cad7801b79c8bd5cc5329a3461a967',
     },
 ];
