@@ -10,5 +10,4 @@ export const getStore = (): CharacterType[] => {
 
 export const setStore = (data: CharacterType[]) => {
     localStorage.setItem(store, JSON.stringify(data));
-    return data;
 };

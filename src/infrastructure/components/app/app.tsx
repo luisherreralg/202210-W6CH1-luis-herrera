@@ -11,6 +11,7 @@ export function App() {
     const characters = useSelector((state: rootState) => state.characters);
     const dispatcher = useDispatch();
 
+    // Cada vez que pasa por aquí, se pierde la persistencia
     useEffect(() => {
         dispatcher(
             ac.loadActionCreator(
@@ -18,6 +19,10 @@ export function App() {
             )
         );
     }, [dispatcher]);
+
+    useEffect(() => {
+        setStore(characters);
+    }, [characters]);
 
     // ------------------------------------------------------
     const initialForm = {
@@ -35,7 +40,7 @@ export function App() {
             return;
         }
         dispatcher(ac.addActionCreator(form));
-        setStore(characters);
+        setForm(initialForm);
     };
 
     const handleForm = (ev: SyntheticEvent) => {
@@ -47,7 +52,7 @@ export function App() {
     };
     return (
         <div className="app">
-            202210-w6ch1-luis-herrera
+            <h1>Game of MOCKS</h1>
             <List data={characters}></List>
             <form>
                 <input
